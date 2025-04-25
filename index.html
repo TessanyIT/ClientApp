@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Editable Excel Table with Search</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- SheetJS (xlsx) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 p-6">
+<!-- Full-width top banner image -->
+<div class="w-full">
+  <!-- Logo in top-right corner -->
+<img src="Logo.png" alt="Logo" style="position: fixed; top: 0; right: 0;" />
+</div>
+
+
+
+  <div class="max-w-6xl mx-auto bg-white shadow-xl rounded-xl p-6">
+    <!-- Flex container to place titles side-by-side -->
+<div class="flex justify-center gap-8 items-start mb-4 flex-wrap">
+
+  <!-- Left Title + Dropdown -->
+  <div class="text-center">
+    <h2 id="dropdownTitle" class="text-2xl font-bold cursor-pointer select-none hover:text-blue-600 transition">
+      📊 ZŠ Chuchelná
+    </h2>
+    <div id="dropdownOptions" class="hidden bg-white border border-gray-300 rounded-xl shadow p-4 mt-2 w-64 animate-dropdown">
+      <ul class="space-y-2">
+        <li><button class="option-btn">1</button></li>
+        <li><button class="option-btn">2</button></li>
+        <li><button class="option-btn">3</button></li>
+        <li><button class="option-btn">4</button></li>
+        <li><button class="option-btn">5</button></li>
+        <li><button class="option-btn">6</button></li>
+        <li><button class="option-btn">7</button></li>
+        <li><button class="option-btn">8</button></li>
+        <li><button class="option-btn">9</button></li>
+        <li><button class="option-btn">10</button></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Right Title + Dropdown -->
+  <div class="text-center">
+    <h2 id="dropdownTitleRight" class="text-2xl font-bold cursor-pointer select-none hover:text-blue-600 transition">
+      📊 Email
+    </h2>
+    <div id="dropdownOptionsRight" class="hidden bg-white border border-gray-300 rounded-xl shadow p-4 mt-2 w-64 animate-dropdown">
+      <ul class="space-y-2">
+        <li><button class="option-btn">1</button></li>
+        <li><button class="option-btn">2</button></li>
+        <li><button class="option-btn">3</button></li>
+        <li><button class="option-btn">4</button></li>
+        <li><button class="option-btn">5</button></li>
+        <li><button class="option-btn">6</button></li>
+        <li><button class="option-btn">7</button></li>
+        <li><button class="option-btn">8</button></li>
+        <li><button class="option-btn">9</button></li>
+        <li><button class="option-btn">10</button></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+    <!-- Search Input -->
+    <input 
+      type="text" 
+      id="search-input" 
+      placeholder="Search Table..." 
+      class="mb-4 p-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+
+    <!-- Table Container -->
+    <div id="excel-table" class="overflow-x-auto"></div>
+
+    <!-- Button to Save the Changes -->
+    <button id="save-btn" class="mt-6 px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-200">
+      Save Changes to Excel
+    </button>
+  <!-- Copy button fixed in top-left corner -->
+<div class="fixed top-4 left-4 z-50">
+  <button id="copyButton" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-xl shadow-md transition">
+    📋 Zkopírovat emaily
+  </button>
+</div>
+
+  <!-- Link to External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
